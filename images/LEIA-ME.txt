@@ -1,0 +1,2 @@
+Coloque aqui o conteúdo da pasta "portfolio_imagens" (as subpastas dos projetos,
+como images/polvo-ous/001.jpg) e o arquivo do seu logo com o nome "logo.png".

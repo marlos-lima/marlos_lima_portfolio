@@ -1,0 +1,25 @@
+{
+  "nome": "Marlos Lima",
+  "telefone": "(55) 11 981254846",
+  "email": "marloslima@hotmail.com",
+  "instagram": "instagram.com/marlos_lima",
+  "logo": "/images/logo.png",
+  "categorias": [
+    {
+      "id": "works",
+      "titulo": "Works"
+    },
+    {
+      "id": "3d",
+      "titulo": "3D"
+    },
+    {
+      "id": "2d",
+      "titulo": "2D"
+    },
+    {
+      "id": "sketches",
+      "titulo": "Sketches"
+    }
+  ]
+}

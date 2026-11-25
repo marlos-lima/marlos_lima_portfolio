@@ -1,0 +1,67 @@
+# ===== PREENCHER DEPOIS (veja o GUIA-CONFIGURACAO.md) =====
+backend:
+  name: github
+  repo: SEU-USUARIO-GITHUB/NOME-DO-REPOSITORIO   # ex.: marloslima/portfolio
+  branch: main
+  base_url: https://SEU-WORKER.SEU-SUBDOMINIO.workers.dev   # endereço do script de login (Cloudflare Worker)
+
+# ===== o resto não precisa mexer =====
+locale: pt
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: conteudo
+    label: Conteúdo do site
+    files:
+      - name: projetos
+        label: Projetos
+        file: data/projetos.json
+        format: json
+        fields:
+          - label: Projetos
+            name: projetos
+            widget: list
+            label_singular: projeto
+            summary: "{{fields.titulo}}"
+            hint: "A ordem desta lista é a ordem no site. Arraste para reorganizar."
+            fields:
+              - { label: Título, name: titulo, widget: string }
+              - { label: "Endereço (sem espaços e acentos)", name: slug, widget: string, hint: "Ex.: pepsi-black. Precisa ser único." }
+              - label: Categorias
+                name: categorias
+                widget: select
+                multiple: true
+                options:
+                  - { label: Works (aparece na página inicial), value: works }
+                  - { label: 3D, value: 3d }
+                  - { label: 2D, value: 2d }
+                  - { label: Sketches, value: sketches }
+              - { label: "Capa (opcional - se vazio usa a 1ª imagem)", name: capa, widget: image, required: false }
+              - label: Imagens
+                name: imagens
+                widget: list
+                field: { label: Imagem, name: imagem, widget: image }
+              - label: Links de vídeo (Vimeo, YouTube ou Behance)
+                name: links_video
+                widget: list
+                required: false
+                field: { label: Link, name: link, widget: string }
+
+      - name: site
+        label: Contato e logo
+        file: data/site.json
+        format: json
+        fields:
+          - { label: Nome, name: nome, widget: string }
+          - { label: Telefone, name: telefone, widget: string }
+          - { label: E-mail, name: email, widget: string }
+          - { label: Instagram, name: instagram, widget: string, hint: "Ex.: instagram.com/seu_usuario" }
+          - { label: Logo, name: logo, widget: image }
+          - label: Categorias do menu
+            name: categorias
+            widget: list
+            hint: "Não altere os códigos (id), senão os projetos perdem a categoria."
+            fields:
+              - { label: Código (id), name: id, widget: string }
+              - { label: Título no menu, name: titulo, widget: string }
