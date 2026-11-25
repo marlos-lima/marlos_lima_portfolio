@@ -1,9 +1,9 @@
-# ===== PREENCHER DEPOIS (veja o GUIA-CONFIGURACAO.md) =====
+# Login pelo painel: com "token de acesso" (entrada só para você, dono do site).
+# Não precisa de servidor de login. Veja o GUIA-CONFIGURACAO.md.
 backend:
   name: github
-  repo: SEU-USUARIO-GITHUB/NOME-DO-REPOSITORIO   # ex.: marloslima/portfolio
+  repo: marlos-lima/marlos_lima_portfolio
   branch: main
-  base_url: https://SEU-WORKER.SEU-SUBDOMINIO.workers.dev   # endereço do script de login (Cloudflare Worker)
 
 # ===== o resto não precisa mexer =====
 locale: pt
